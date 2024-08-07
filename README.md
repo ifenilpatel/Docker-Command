@@ -4,8 +4,8 @@ Welcome to the Docker Commands repository! This repository contains documentatio
 
 ## Contents
 
-- [MySQL](mysql.md): Commands for MySQL Docker images and containers.
-- [PostgreSQL](postgresSQL.md): Commands for PostgreSQL Docker images and containers.
+- [MySQL](MySQL.md): Commands for MySQL Docker images and containers.
+- [PostgreSQL](PostgreSQL.md): Commands for PostgreSQL Docker images and containers.
 
 ## MySQL
 
