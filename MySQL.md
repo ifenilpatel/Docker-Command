@@ -41,20 +41,21 @@ This command lists all running containers. You should see an entry for mysql-con
 
 ## Connecting to the MySQL Container
 
-You can connect to the MySQL instance from your host machine using a MySQL client or command-line tool. Use the following connection details:
+You can connect to the MySQL instance directly from within the Docker container using the MySQL client.
 
-- Host: `localhost`
-- Port: `3306`
-- Username: `root`
-- Password: `root`
-
-For example, using the MySQL command-line tool:
+1. Start an Interactive Session with MySQL Client
+   
+Run the following command to start an interactive session with the MySQL client (mysql) inside the container:
 
 ```bash
-mysql -h 127.0.0.1 -P 3306 -u root -p
+docker exec -it mysql-container mysql -u root -p
 ```
+- `docker exec -it mysql-container`: Start an interactive terminal session in the running container named `mysql-container`.
+- `mysql`: Run the MySQL client.
+- `-u root`: Specify the MySQL username (root).
+- `-p`: Prompt for the password.
 
-You will be prompted to enter the password (`root`).
+You will be prompted to enter the root password (root). After entering the password, you’ll be in the MySQL interactive shell where you can run SQL queries.
 
 ## Stopping and Removing the Container
 
