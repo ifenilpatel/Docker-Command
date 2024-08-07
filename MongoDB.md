@@ -51,7 +51,7 @@ For example, using the mongo command-line tool:
 Run the following command to start an interactive session with the MongoDB shell (mongosh) inside the container:
 
 ```bash
-docker exec -it mongo-container mongosh -u root -p rootpassword --authenticationDatabase admin
+docker exec -it mongo-container mongosh -u root -p root --authenticationDatabase admin
 ```
 - `docker exec -it mongo-container`: Start an interactive terminal session in the running container named `mongo-container`.
 - `mongosh`: Run the MongoDB Shell.
