@@ -41,20 +41,20 @@ This command lists all running containers. You should see an entry for postgres-
 
 ## Connecting to the PostgreSQL Container
 
-You can connect to the PostgreSQL instance from your host machine using a PostgreSQL client or command-line tool. Use the following connection details:
+You can connect to the PostgreSQL instance directly from within the Docker container using the psql client. This avoids the need to install PostgreSQL tools locally.
 
-- Host: `localhost`
-- Port: `5432`
-- Username: `postgres`
-- Password: `root`
+1. Start an Interactive Session with psql
 
-For example, using the psql command-line tool:
+Run the following command to start an interactive session with the psql client inside the container:
 
 ```bash
-psql -h 127.0.0.1 -p 5432 -U postgres
+docker exec -it postgres-container psql -U postgres
 ```
+- docker exec -it postgres-container: Start an interactive terminal session in the running container named postgres-container.
+- psql: Run the psql client.
+- -U postgres: Connect as the postgres user.
 
-You will be prompted to enter the password (`root`).
+You will be connected to the PostgreSQL database, and you can start running SQL queries directly from this interactive session.
 
 ## Stopping and Removing the Container
 
