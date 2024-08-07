@@ -42,20 +42,21 @@ This command lists all running containers. You should see an entry for mongo-con
 
 ## Connecting to the MongoDB Container
 
-You can connect to the MongoDB instance from your host machine using a MongoDB client or command-line tool. Use the following connection details:
+You can connect to the MongoDB instance using the mongosh shell directly from within the Docker container. This avoids the need to install any MongoDB tools locally.
 
-- Host: `localhost`
-- Port: `27017`
-- Username: `root`
-- Password: `root`
+1. Access the MongoDB Shell
 
 For example, using the mongo command-line tool:
 
-```bash
-mongo -u root -p root --authenticationDatabase admin
-```
+Run the following command to start an interactive session with the MongoDB shell (mongosh) inside the container:
 
-You will be prompted to enter the password (`root`).
+```bash
+docker exec -it mongo-container mongosh -u root -p rootpassword --authenticationDatabase admin
+```
+- `docker exec -it mongo-container`: Start an interactive terminal session in the running container named `mongo-container`.
+- `mongosh`: Run the MongoDB Shell.
+- `-u root -p rootpassword`: Specify the MongoDB username and password.
+- `--authenticationDatabase admin`: Specify the database to authenticate against.
 
 ## Stopping and Removing the Container
 
